@@ -1,0 +1,317 @@
+/* Fundo principal da página */
+body {
+    background: var(--bg-light);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Quando o tema for escuro */
+[data-theme="dark"] body {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+/* Garantindo que elementos fora do form, como partículas ou seções extras, sigam o tema */
+[data-theme="dark"] #particles-js {
+    background-color: var(--bg-dark);
+}
+
+.header {
+    background: linear-gradient(to right, #7b2cbf, #9d4edd);
+    color: white;
+    padding: 40px 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.form-section {
+    width: 100%;
+    max-width: 700px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 0px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .form-section {
+    background: #2c2c3e;
+    color: white;
+    border-radius: 0px;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+}
+
+
+input,
+textarea {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    z-index: 3;
+    padding: 10px 0;
+}
+
+
+[data-theme="dark"] footer {
+    color: #ccc;
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+[data-theme="dark"] .header {
+    background: linear-gradient(to right, #3a0ca3, #7209b7);
+    color: #fff;
+}
+
+[data-theme="dark"] .form-section {
+    background: #2c2c3e;
+    color: white;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+    background-color: #1e1e2f !important;
+    color: #f0f0f0 !important;
+    border: 1px solid #555 !important;
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+    color: #888 !important;
+}
+
+/* NOVO ESTILO DA TABELA PARA DARK MODE */
+[data-theme="dark"] .table {
+    color: #f0f0f0;
+    border-color: #4a4a5e;
+    /* Borda um pouco mais clara para sutil destaque */
+    background-color: #2c2c3e;
+}
+
+[data-theme="dark"] .table th {
+    background-color: #3a0ca3;
+    /* Roxo escuro do tema para o cabeçalho */
+    color: #ffffff;
+    border-color: #5a189a;
+    /* Borda roxa para o cabeçalho */
+}
+
+[data-theme="dark"] .table td {
+    background-color: #2c2c3e;
+    /* Mantém o fundo das células escuro */
+    border-color: #4a4a5e;
+    /* Borda consistente */
+}
+
+/* === Botão com Brilho + Loading === */
+.btn-purple {
+    background-color: #7b2cbf;
+    color: white;
+    transition: 0.3s ease;
+    border: none;
+    box-shadow: 0 0 12px rgba(123, 44, 191, 0.5);
+    animation: pulse-glow 2s infinite ease-in-out;
+}
+
+.btn-purple:hover {
+    background-color: #5a189a;
+    box-shadow: 0 0 20px rgba(123, 44, 191, 0.9);
+}
+
+.btn-purple.loading {
+    pointer-events: none;
+    opacity: 0.85;
+    position: relative;
+    animation: none;
+    box-shadow: none;
+}
+
+.btn-purple.loading::after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    margin-top: -8px;
+    border: 2px solid white;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+/* Keyframes */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 12px rgba(123, 44, 191, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 24px rgba(123, 44, 191, 0.9);
+    }
+}
+
+[data-theme="dark"] .btn-purple {
+    background-color: #9d4edd;
+    color: white;
+    box-shadow: 0 0 12px rgba(157, 78, 221, 0.5);
+    animation: pulse-glow 2s infinite ease-in-out;
+}
+
+[data-theme="dark"] .btn-purple:hover {
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.9);
+}
+
+[data-theme="dark"] #particles-js {
+    background-color: var(--bg-dark);
+}
+
+[data-theme="light"] #particles-js {
+    background-color: var(--bg-light);
+}
+
+[data-theme="dark"] body {
+    background-color: #1e1e2f;
+    color: #f0f0f0;
+}
+
+[data-theme="dark"] #particles-js {
+    background-color: #1e1e2f;
+}
+
+[data-theme="light"] #particles-js {
+    background-color: #f9f9ff;
+}
+
+[data-theme="dark"] footer {
+    color: #ffffff !important;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
+    text-shadow: 0 0 6px #000;
+}
+
+main {
+    flex: 1;
+}
+
+.btn-outline-light-custom {
+    transition: 0.3s;
+    padding: 8px 16px;
+    font-weight: 500;
+}
+
+[data-theme="light"] .btn-outline-light-custom {
+    color: #333;
+    border: 1px solid #999;
+    background-color: #f8f9fa;
+}
+
+[data-theme="light"] .btn-outline-light-custom:hover {
+    background-color: #e2e6ea;
+}
+
+[data-theme="dark"] .btn-outline-light-custom {
+    color: #fff;
+    border: 1px solid #ccc;
+    background-color: transparent;
+}
+
+[data-theme="dark"] .btn-outline-light-custom:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+[data-theme="dark"] .btn-outline-light-custom {
+    color: #fff;
+    border: 1px solid #ccc;
+    background: transparent;
+}
+
+.btn-outline-light-custom:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .btn-outline-light-custom:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* NOVO ESTILO PARA O BOTÃO 'NOVA ANÁLISE' */
+.btn-nova-analise {
+    background-color: #7b2cbf;
+    /* Cor roxa principal do tema */
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 50px;
+    /* Bordas bem arredondadas (formato de pílula) */
+    font-weight: 600;
+    /* Texto um pouco mais forte */
+    text-decoration: none;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    /* Espaço entre o ícone e o texto */
+}
+
+.btn-nova-analise:hover {
+    background-color: #5a189a;
+    /* Roxo mais escuro no hover */
+    color: #ffffff;
+    transform: translateY(-2px);
+    /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo do botão no modo escuro */
+[data-theme="dark"] .btn-nova-analise {
+    background-color: #9d4edd;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .btn-nova-analise:hover {
+    background-color: #7b2cbf;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
